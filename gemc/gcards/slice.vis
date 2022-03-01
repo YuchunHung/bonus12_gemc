@@ -1,0 +1,5 @@
+/vis/viewer/set/lineSegmentsPerCircle 120
+
+/vis/viewer/set/viewpointThetaPhi 45 0 deg
+/vis/viewer/set/lightsThetaPhi 40 50
+/vis/viewer/zoom 3.0
