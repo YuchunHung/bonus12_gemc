@@ -26,7 +26,8 @@ if( scalar @ARGV != 1)
 }
 
 # Loading configuration file and paramters
-our %configuration = load_configuration($ARGV[0]);
+#our %configuration = load_configuration($ARGV[0]);
+our %configuration;
 
 # One can change the "variation" here if one is desired different from the config.dat
 # $configuration{"variation"} = "myvar";
@@ -48,9 +49,10 @@ sub define_hit
 	$hit{"mvToMeV"}         = 100;
 	$hit{"pedestal"}        = -20;
 	print_hit(\%configuration, \%hit);
+	print "Call hit\n";
 }
 
-define_hit();
+define_hit(); # Is this necessarly? (By y.-c.)
 
 
 1;

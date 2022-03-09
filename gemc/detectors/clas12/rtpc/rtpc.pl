@@ -44,12 +44,12 @@ define_bank();
 require "./hit.pl";
 
 # all the scripts must be run for every configuration
-my @allConfs = ("original");
+#my @allConfs = ("original");
+my @allConfs = ("hydrogenTarget", "heliumTarget", "deuteriumTarget");
 
 foreach my $conf ( @allConfs )
 {
     $configuration{"variation"} = $conf ;
-    
     # materials
     materials();
     

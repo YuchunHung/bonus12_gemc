@@ -1,0 +1,23 @@
+#! /bin/tcsh -f 
+
+set j = 0
+while ( $j <5 )
+ echo "submitting job # $j "
+  cp jsub_sim.xml jobs/jsub_sim_run_$j.xml
+  sed -i 's/XXX/'$j'/' jobs/jsub_sim_run_$j.xml
+  sed -i 's/YYY/'$j'/' jobs/jsub_sim_run_$j.xml
+  sed -i 's/input_lund_file/flat_protons_'$j'.lund/' jobs/jsub_sim_run_$j.xml
+  sed -i 's/input_lund_file_2/flat_protons_'$j'.lund/' jobs/jsub_sim_run_$j.xml
+  
+  cp command_script jobs/command_submit_run_$j
+  sed -i 's/input_lund_file/flat_protons_'$j'.lund/' jobs/command_submit_run_$j
+  sed -i 's/output_evio_file/rgf_flat_protons_'$j'.evio/' jobs/command_submit_run_$j
+  sed -i 's/output_evio2hipo_file/rgf_flat_protons_evio2hipo_'$j'.hipo/' jobs/command_submit_run_$j
+  sed -i 's/output_recon_hipo_file/rgf_flat_protons_recon_'$j'.hipo/' jobs/command_submit_run_$j
+  
+  chmod u+=xwr jobs/command_submit_run_$j
+  #jsub -xml jobs/jsub_sim_run_$j.xml
+  swif2 add-jsub -script jobs/jsub_sim_run_$j.xml -workflow sim-SubmitTest
+@ j++
+end
+

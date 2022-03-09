@@ -60,10 +60,26 @@ sub materials
     # TargetbonusGas
     %mat = init_mat();
     $mat{"name"}          ="DeuteriumTargetGas";
-    $mat{"description"}   = "5.7 atm deuterium gas";
-    $mat{"density"}       = "0.00091";  # in g/cm3
+    $mat{"description"}   = "5.6 atm deuterium gas";
+    $mat{"density"}       = "0.000937";  # in g/cm3
     $mat{"ncomponents"}   = "1";
     $mat{"components"}    = "deuteriumGas 1";
+    print_mat(\%configuration, \%mat);
+    
+    %mat = init_mat();
+    $mat{"name"}          ="HydrogenTargetGas";
+    $mat{"description"}   = "5.6 atm hydrogen gas";
+    $mat{"density"}       = "0.000469";  # in g/cm3
+    $mat{"ncomponents"}   = "1";
+    $mat{"components"}    = "Hgas 1";
+    print_mat(\%configuration, \%mat);
+    
+    %mat = init_mat();
+    $mat{"name"}          ="HeliumTargetGas";
+    $mat{"description"}   = "5.6 atm helium gas";
+    $mat{"density"}       = "0.000931";  # in g/cm3
+    $mat{"ncomponents"}   = "1";
+    $mat{"components"}    = "G4_He 1";
     print_mat(\%configuration, \%mat);
     
     # Connector material is Vectra E130i

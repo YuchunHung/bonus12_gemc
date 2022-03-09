@@ -1,7 +1,8 @@
 <gcard>
 
 	
-   <detector name="rtpc" factory="TEXT" variation="original"/>
+   <detector name="rtpc" factory="TEXT" variation="deuteriumTarget"/>
+   <option name="geometry" value="1200x1000"/>
 
 	<!-- <option name="ALLRAWS" value="rtpc"/> -->
 	<option name="INTEGRATEDRAW" value="rtpc"/>
